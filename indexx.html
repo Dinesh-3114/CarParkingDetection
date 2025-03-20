@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Parking Detection</title>
+</head>
+<body>
+    <h1>Parking Detection</h1>
+    <button onclick="detectParking()">Detect Parking</button>
+    <pre id="result"></pre>
+
+    <script>
+        function detectParking() {
+            fetch('/detect')
+                .then(response => response.json())
+                .then(data => document.getElementById('result').innerText = JSON.stringify(data, null, 2));
+        }
+    </script>
+</body>
+</html>
